@@ -19,7 +19,7 @@ export const ProjectCarousel = ({ images, title }) => {
 
     return (
         <>
-            <div className="group relative h-56 overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+            <div className="group relative h-52 overflow-hidden rounded-xl bg-slate-200 sm:h-64 md:h-56 dark:bg-slate-800">
                 <img
                     src={images[currentImage]}
                     alt={`${title} imagen ${currentImage + 1}`}

@@ -1,12 +1,16 @@
+import { useState } from 'react'
 import { Link } from 'react-scroll'
+import { FaBars, FaTimes } from 'react-icons/fa'
 import { ThemeToggle } from '../ThemeToggle/ThemeToggle'
 
 export const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false)
+
     const navLinks = [
-        { name: 'Sobre mí', to: 'about' },
-        { name: 'Tecnologías', to: 'skills' },
-        { name: 'Proyectos', to: 'projects' },
-        { name: 'Contacto', to: 'contact' },
+        { name: 'About', to: 'about' },
+        { name: 'Skills', to: 'skills' },
+        { name: 'Projects', to: 'projects' },
+        { name: 'Contact', to: 'contact' },
     ]
 
     return (
@@ -21,11 +25,10 @@ export const Navbar = () => {
                         <li key={link.to}>
                             <Link
                                 to={link.to}
-                                smooth={true}
+                                smooth
                                 duration={500}
                                 offset={-80}
-                                className="cursor-pointer text-sm font-medium text-slate-600 hover:text-sky-500 dark:text-slate-300 
-                                        dark:hover:text-sky-400"
+                                className="cursor-pointer text-sm font-medium text-slate-600 hover:text-sky-500 dark:text-slate-300 dark:hover:text-sky-400"
                             >
                                 {link.name}
                             </Link>
@@ -33,8 +36,39 @@ export const Navbar = () => {
                     ))}
                 </ul>
 
-                <ThemeToggle />
+                <div className="flex items-center gap-3">
+                    <ThemeToggle />
+                    
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="cursor-pointer text-xl text-slate-700 md:hidden dark:text-slate-300"
+                    >
+                        {isOpen ? <FaTimes /> : <FaBars />}
+                    </button>
+                </div>
             </nav>
+
+            {isOpen && (
+                <div className="md:hidden">
+                    <ul className="mx-auto flex max-w-6xl flex-col gap-4 px-6 pb-6">
+                        {navLinks.map((link) => (
+                            <li key={link.to}>
+                                <Link
+                                    to={link.to}
+                                    smooth
+                                    duration={500}
+                                    offset={-80}
+                                    onClick={() => setIsOpen(false)}
+                                    className="block cursor-pointer text-sm font-medium text-slate-600 hover:text-sky-500 
+                                            dark:text-slate-300 dark:hover:text-sky-400"
+                                >
+                                    {link.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </header>
     )
 }
