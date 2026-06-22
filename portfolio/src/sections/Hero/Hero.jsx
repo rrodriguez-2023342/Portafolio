@@ -1,0 +1,80 @@
+import { motion } from 'framer-motion'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+
+export const Hero = () => {
+    return (
+        <section className="flex min-h-[calc(100vh-4rem)] items-center pt-10">
+            <div className="mx-auto w-full max-w-6xl px-6">
+                <motion.div
+                    initial={{ opacity: 0, y: 25 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
+                >
+                    <p className="mb-4 text-sky-500">
+                        Hola, soy
+                    </p>
+
+                    <h1 className="mb-4 text-5xl font-bold md:text-7xl">
+                        Roberto Rodríguez
+                    </h1>
+
+                    <h2 className="mb-6 text-2xl font-semibold text-slate-500 dark:text-slate-400 md:text-4xl">
+                        Desarrollador Junior
+                    </h2>
+
+                    <p className="max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+                        Construyo aplicaciones web modernas utilizando React, Node.js,
+                        Spring Boot y MySQL.
+                    </p>
+
+                    <div className="mt-8 flex flex-wrap gap-4">
+                        <a
+                            href="#projects"
+                            className="rounded-full bg-sky-500 px-6 py-3 font-semibold text-white hover:bg-sky-600"
+                        >
+                            Ver proyectos
+                        </a>
+
+                        <a
+                            href="#contact"
+                            className="rounded-full border border-slate-300 px-6 py-3 font-semibold text-slate-700 hover:border-sky-500 hover:text-sky-500 dark:border-slate-700 dark:text-slate-300"
+                        >
+                            Contactarme
+                        </a>
+                    </div>
+
+                    <div className="mt-8 flex gap-5">
+                        <a
+                            href="https://github.com/rrodriguez-2023342"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-2xl text-slate-500 hover:text-sky-500 dark:text-slate-400"
+                        >
+                            <FaGithub />
+                        </a>
+
+                        <a
+                            href="https://linkedin.com/in/roberto-rodriguez-422724324"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-2xl text-slate-500 hover:text-sky-500 dark:text-slate-400"
+                        >
+                            <FaLinkedin />
+                        </a>
+                    </div>
+
+                    <div className="mt-8 flex flex-wrap gap-3">
+                        {['React', 'Node.js' , 'Tailwind CSS', 'Spring Boot', 'MySQL'].map((skill) => (
+                            <span
+                                key={skill}
+                                className="rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300"
+                            >
+                                {skill}
+                            </span>
+                        ))}
+                    </div>
+                </motion.div>
+            </div>
+        </section>
+    )
+}

@@ -10,3 +10,11 @@ body {
     margin: 0;
     font-family: system-ui, sans-serif;
 }
+
+* {
+    transition:
+        background-color 200ms ease,
+        border-color 200ms ease,
+        color 200ms ease,
+        transform 200ms ease;
+}

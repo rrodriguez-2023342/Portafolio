@@ -1,16 +1,19 @@
 import { Navbar } from './components/Navbar/Navbar'
+import { Hero } from './sections/Hero/Hero'
+import { About } from './sections/About/About'
+import { Skills } from './sections/Skills/Skills'
+import { Projects } from './sections/Projects/Projects'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-slate-950 transition-colors duration-300 dark:bg-slate-950 dark:text-white">
+    <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
       <Navbar />
 
       <main>
-        <section className="flex min-h-screen items-center justify-center">
-          <h1 className="text-6xl font-bold">
-            Roberto Rodríguez
-          </h1>
-        </section>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
       </main>
     </div>
   )
