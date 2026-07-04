@@ -5,13 +5,15 @@ import { Skills } from './sections/Skills/Skills'
 import { Projects } from './sections/Projects/Projects'
 import { Contact } from './sections/Contact/Contact'
 import { Footer } from './components/Footer/Footer'
+import { AnimatedBackground } from './components/AnimatedBackground/AnimatedBackground'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
+    <div className="relative isolate min-h-screen text-slate-950 dark:text-white">
+      <AnimatedBackground />
       <Navbar />
 
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Skills />
@@ -19,7 +21,9 @@ function App() {
         <Contact />
       </main>
 
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
 
     </div>
   )
