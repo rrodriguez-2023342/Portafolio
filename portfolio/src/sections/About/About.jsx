@@ -3,14 +3,14 @@ import { FaTerminal } from 'react-icons/fa'
 
 export const About = () => {
     return (
-        <section id="about" className="py-24 md:py-32">
+        <section id="about" className="py-16 sm:py-24 md:py-32">
             <div className="section-shell">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.55 }}
-                    className="mb-10"
+                    className="mb-8 sm:mb-10"
                 >
                     <span className="section-eyebrow">Sobre mí</span>
                     <h2 className="section-title max-w-3xl">
@@ -25,7 +25,7 @@ export const About = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.25 }}
                         transition={{ duration: 0.6 }}
-                        className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-950/10 dark:border-slate-800 dark:bg-slate-950 dark:shadow-slate-950/20"
+                        className="max-w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-slate-950/10 dark:border-slate-800 dark:bg-slate-950 dark:shadow-slate-950/20 sm:rounded-3xl"
                     >
                         <div className="flex items-center justify-between border-b border-slate-200 bg-slate-100/90 px-5 py-3 dark:border-slate-800 dark:bg-slate-900/80">
                             <div className="flex gap-2" aria-hidden="true">
@@ -39,7 +39,7 @@ export const About = () => {
                             </span>
                         </div>
 
-                        <div className="overflow-x-auto p-6 font-mono text-sm leading-8 sm:p-8 sm:text-base">
+                        <div className="overflow-x-auto p-4 font-mono text-xs leading-7 sm:p-6 sm:text-sm sm:leading-8 md:p-8 md:text-base">
                             <p><span className="mr-5 select-none text-slate-300 dark:text-slate-600">01</span><span className="text-fuchsia-600 dark:text-fuchsia-400">const</span> <span className="text-sky-600 dark:text-sky-300">roberto</span> <span className="text-slate-700 dark:text-white">= {'{'}</span></p>
                             <p><span className="mr-5 select-none text-slate-300 dark:text-slate-600">02</span>  <span className="text-indigo-600 dark:text-indigo-300">rol</span><span className="text-slate-700 dark:text-white">:</span> <span className="text-emerald-700 dark:text-emerald-300">&apos;Full Stack Developer&apos;</span><span className="text-slate-700 dark:text-white">,</span></p>
                             <p><span className="mr-5 select-none text-slate-300 dark:text-slate-600">03</span>  <span className="text-indigo-600 dark:text-indigo-300">disfruta</span><span className="text-slate-700 dark:text-white">:</span> <span className="text-emerald-700 dark:text-emerald-300">&apos;resolver problemas&apos;</span><span className="text-slate-700 dark:text-white">,</span></p>
@@ -64,14 +64,14 @@ export const About = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.55 }}
-                        className="glass-panel flex h-full min-h-80 flex-col justify-center rounded-3xl p-8 sm:p-10"
+                        className="glass-panel flex h-full flex-col justify-center rounded-2xl p-6 sm:rounded-3xl sm:p-8 lg:min-h-80 lg:p-10"
                     >
                         <span className="mb-7 h-1 w-16 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500" />
-                        <p className="text-2xl font-bold leading-snug sm:text-3xl">
+                        <p className="text-xl font-bold leading-snug sm:text-2xl lg:text-3xl">
                             Me gusta entender cómo encaja todo:
                             <span className="text-sky-500"> interfaz, servidor y datos.</span>
                         </p>
-                        <p className="mt-6 max-w-md text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+                        <p className="mt-5 max-w-md text-base leading-relaxed text-slate-600 dark:text-slate-400 sm:mt-6 sm:text-lg">
                             Por eso trabajo de lado a lado en cada proyecto y cuido tanto
                             lo que ve el usuario como lo que sucede detrás.
                         </p>

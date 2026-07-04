@@ -5,7 +5,7 @@ import { ProjectCarousel } from '../../components/ProjectCarousel/ProjectCarouse
 
 export const Projects = () => {
     return (
-        <section id="projects" className="py-24 md:py-32">
+        <section id="projects" className="py-16 sm:py-24 md:py-32">
             <div className="section-shell">
                 <motion.div
                     initial={{ opacity: 0, y: 25 }}
@@ -14,7 +14,7 @@ export const Projects = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <span className="section-eyebrow">Proyectos</span>
-                    <div className="mb-12 flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
+                    <div className="mb-8 flex flex-col justify-between gap-5 sm:mb-12 lg:flex-row lg:items-end">
                         <h2 className="section-title">
                             Ideas convertidas en
                             <span className="text-gradient"> productos reales.</span>
@@ -35,11 +35,11 @@ export const Projects = () => {
                                 whileHover={{ y: -5 }}
                                 className="
                                     glass-panel
-                                    relative grid gap-8 overflow-hidden
-                                    rounded-3xl
-                                    p-5 sm:p-7
+                                    relative grid gap-6 overflow-hidden
+                                    rounded-2xl
+                                    p-4 sm:gap-8 sm:rounded-3xl sm:p-7
                                     transition-shadow hover:shadow-2xl hover:shadow-sky-500/10
-                                    md:grid-cols-[minmax(300px,440px)_1fr]
+                                    lg:grid-cols-[minmax(300px,440px)_1fr]
                                 "
                             >
                                 <div className="relative z-10">
@@ -50,7 +50,7 @@ export const Projects = () => {
                                 </div>
 
                                 <div className="relative z-10 flex flex-col justify-center">
-                                    <div className="mb-4 flex items-center gap-3">
+                                    <div className="mb-4 flex flex-wrap items-center gap-2 sm:gap-3">
                                         <span className="text-sm font-black tracking-widest text-sky-500">
                                             0{index + 1}
                                         </span>
@@ -60,7 +60,7 @@ export const Projects = () => {
                                         </span>
                                     </div>
 
-                                    <h3 className="mb-3 text-2xl font-bold tracking-tight sm:text-3xl">
+                                    <h3 className="mb-3 text-xl font-bold tracking-tight sm:text-3xl">
                                         {project.title}
                                     </h3>
 
@@ -79,13 +79,13 @@ export const Projects = () => {
                                         {project.description}
                                     </p>
 
-                                    <div className="flex flex-wrap gap-3">
+                                    <div className="flex flex-col gap-3 min-[380px]:flex-row min-[380px]:flex-wrap">
                                         <a
                                             href={project.github}
                                             target="_blank"
                                             rel="noreferrer"
                                             className="
-                                                inline-flex items-center gap-2
+                                                inline-flex w-full items-center justify-center gap-2 min-[380px]:w-auto
                                                 rounded-full
                                                 border border-slate-300
                                                 px-4 py-2
@@ -105,7 +105,7 @@ export const Projects = () => {
                                             target="_blank"
                                             rel="noreferrer"
                                             className="
-                                                inline-flex items-center gap-2
+                                                inline-flex w-full items-center justify-center gap-2 min-[380px]:w-auto
                                                 rounded-full
                                                 border border-slate-300
                                                 px-4 py-2

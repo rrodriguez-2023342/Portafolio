@@ -80,26 +80,26 @@ export const Contact = () => {
     }
 
     return (
-        <section id="contact" className="py-24 md:py-32">
+        <section id="contact" className="py-16 sm:py-24 md:py-32">
             <div className="section-shell">
                 <motion.div
                     initial={{ opacity: 0, y: 25 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.15 }}
                     transition={{ duration: 0.6 }}
-                    className="glass-panel relative overflow-hidden rounded-[2rem] p-6 sm:p-10 lg:p-12"
+                    className="glass-panel relative overflow-hidden rounded-2xl p-4 sm:rounded-[2rem] sm:p-8 lg:p-12"
                 >
                     <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-sky-500/10 blur-3xl" />
                     <div className="pointer-events-none absolute -bottom-36 -left-24 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl" />
 
-                    <div className="relative z-10 grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+                    <div className="relative z-10 grid gap-8 sm:gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
                         <div>
                             <span className="section-eyebrow">Contacto</span>
                             <h2 className="section-title">
                                 Construyamos algo
                                 <span className="text-gradient"> juntos.</span>
                             </h2>
-                            <p className="mt-5 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+                            <p className="mt-5 text-base leading-relaxed text-slate-600 dark:text-slate-400 sm:text-lg">
                                 Si tienes una oportunidad, una idea o simplemente quieres
                                 conversar sobre tecnología, mi bandeja está abierta.
                             </p>
@@ -111,7 +111,7 @@ export const Contact = () => {
                                         href={link.href}
                                         target={link.href.startsWith('http') ? '_blank' : undefined}
                                         rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                                        className="group flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white/45 p-4 hover:border-sky-500/35 hover:bg-sky-500/5 dark:border-slate-800 dark:bg-slate-900/35"
+                                        className="group flex min-w-0 items-center gap-3 rounded-xl border border-slate-200/80 bg-white/45 p-3 hover:border-sky-500/35 hover:bg-sky-500/5 dark:border-slate-800 dark:bg-slate-900/35 sm:gap-4 sm:rounded-2xl sm:p-4"
                                     >
                                         <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-500/10 text-lg text-sky-500 group-hover:scale-110">
                                             {link.icon}
@@ -129,7 +129,7 @@ export const Contact = () => {
                             </div>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="rounded-3xl border border-slate-200/80 bg-white/55 p-5 shadow-xl shadow-slate-950/5 backdrop-blur-md sm:p-7 dark:border-slate-800 dark:bg-slate-900/55">
+                        <form onSubmit={handleSubmit} className="min-w-0 rounded-2xl border border-slate-200/80 bg-white/55 p-4 shadow-xl shadow-slate-950/5 backdrop-blur-md sm:rounded-3xl sm:p-7 dark:border-slate-800 dark:bg-slate-900/55">
                             <div className="mb-5">
                                 <label htmlFor="name" className="mb-2 block text-sm font-semibold">
                                     Nombre

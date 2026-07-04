@@ -77,14 +77,14 @@ export const ProjectCarousel = ({ images, title }) => {
 
     const modal = isOpen ? (
         <div
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 p-4"
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 p-2 sm:p-4"
             onClick={() => setIsOpen(false)}
             role="dialog"
             aria-modal="true"
             aria-label={`Vista ampliada de ${title}`}
         >
             <div
-                className="relative flex max-h-[90vh] max-w-[calc(100vw-2rem)] items-center justify-center"
+                className="relative flex max-h-[92svh] max-w-[calc(100vw-1rem)] items-center justify-center sm:max-h-[90vh] sm:max-w-[calc(100vw-2rem)]"
                 onClick={(event) => event.stopPropagation()}
             >
                 {failedImages[currentImage] ? imageFallback : (
@@ -92,14 +92,14 @@ export const ProjectCarousel = ({ images, title }) => {
                         src={images[currentImage]}
                         alt={`${title} imagen ampliada`}
                         onError={() => markImageAsFailed(currentImage)}
-                        className="max-h-[90vh] max-w-full rounded-xl object-contain"
+                        className="max-h-[92svh] max-w-full rounded-lg object-contain sm:max-h-[90vh] sm:rounded-xl"
                     />
                 )}
 
                 <button
                     type="button"
                     onClick={() => setIsOpen(false)}
-                    className="absolute right-4 top-4 cursor-pointer rounded-full bg-black/60 p-3 text-white"
+                    className="absolute right-2 top-2 cursor-pointer rounded-full bg-black/70 p-2.5 text-white sm:right-4 sm:top-4 sm:p-3"
                     aria-label="Cerrar imagen ampliada"
                 >
                     <FaTimes />
@@ -108,7 +108,7 @@ export const ProjectCarousel = ({ images, title }) => {
                 <button
                     type="button"
                     onClick={previousImage}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black/60 p-3 text-white"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black/70 p-2.5 text-white sm:left-4 sm:p-3"
                     aria-label="Imagen anterior"
                 >
                     <FaChevronLeft />
@@ -117,13 +117,13 @@ export const ProjectCarousel = ({ images, title }) => {
                 <button
                     type="button"
                     onClick={nextImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black/60 p-3 text-white"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black/70 p-2.5 text-white sm:right-4 sm:p-3"
                     aria-label="Imagen siguiente"
                 >
                     <FaChevronRight />
                 </button>
 
-                <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+                <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-2 rounded-full bg-black/30 px-3 py-2 backdrop-blur-sm sm:bottom-4">
                     {images.map((_, index) => (
                         <button
                             type="button"
@@ -145,9 +145,11 @@ export const ProjectCarousel = ({ images, title }) => {
     return (
         <>
             <div
-                className="group relative h-56 overflow-hidden rounded-2xl bg-slate-200 sm:h-64 md:h-full md:min-h-64 dark:bg-slate-800"
+                className="group relative h-52 overflow-hidden rounded-xl bg-slate-200 min-[400px]:h-56 sm:h-64 sm:rounded-2xl lg:h-full lg:min-h-64 dark:bg-slate-800"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
+                onTouchStart={() => setIsPaused(true)}
+                onTouchEnd={() => setIsPaused(false)}
             >
                 {failedImages[currentImage] ? (
                     <button
@@ -172,7 +174,7 @@ export const ProjectCarousel = ({ images, title }) => {
                 <button
                     type="button"
                     onClick={previousImage}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black/55 p-2.5 text-white opacity-100 backdrop-blur-sm transition-all hover:scale-110 hover:bg-sky-500 md:opacity-0 md:group-hover:opacity-100"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black/55 p-2 text-white opacity-100 backdrop-blur-sm transition-all hover:scale-110 hover:bg-sky-500 sm:left-3 sm:p-2.5 md:opacity-0 md:group-hover:opacity-100"
                     aria-label="Imagen anterior"
                 >
                     <FaChevronLeft />
@@ -181,7 +183,7 @@ export const ProjectCarousel = ({ images, title }) => {
                 <button
                     type="button"
                     onClick={nextImage}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black/55 p-2.5 text-white opacity-100 backdrop-blur-sm transition-all hover:scale-110 hover:bg-sky-500 md:opacity-0 md:group-hover:opacity-100"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black/55 p-2 text-white opacity-100 backdrop-blur-sm transition-all hover:scale-110 hover:bg-sky-500 sm:right-3 sm:p-2.5 md:opacity-0 md:group-hover:opacity-100"
                     aria-label="Imagen siguiente"
                 >
                     <FaChevronRight />

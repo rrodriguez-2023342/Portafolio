@@ -9,7 +9,7 @@ import { AnimatedBackground } from './components/AnimatedBackground/AnimatedBack
 
 function App() {
   return (
-    <div className="relative isolate min-h-screen text-slate-950 dark:text-white">
+    <div className="relative isolate min-h-screen overflow-x-clip text-slate-950 dark:text-white">
       <AnimatedBackground />
       <Navbar />
 

@@ -4,10 +4,13 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: clip;
 }
 
 body {
     margin: 0;
+    min-width: 320px;
+    overflow-x: clip;
     font-family: system-ui, sans-serif;
     background-color: #ffffff;
     text-rendering: optimizeLegibility;
@@ -22,14 +25,14 @@ body::selection {
 }
 
 section[id] {
-    scroll-margin-top: 6rem;
+    scroll-margin-top: 8rem;
 }
 
 .section-shell {
     position: relative;
     margin-inline: auto;
     max-width: 72rem;
-    padding-inline: 1.5rem;
+    padding-inline: 1rem;
 }
 
 .glass-panel {
@@ -176,6 +179,25 @@ section[id] {
     flex-shrink: 0;
     gap: 1rem;
     padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .section-shell {
+        padding-inline: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    section[id] {
+        scroll-margin-top: 6rem;
+    }
+}
+
+@media (hover: none) {
+    .interactive-card:hover,
+    .icon-button:hover {
+        transform: none;
+    }
 }
 
 .tech-marquee:hover .tech-marquee-track {

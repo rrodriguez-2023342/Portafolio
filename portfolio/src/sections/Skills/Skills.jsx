@@ -42,7 +42,8 @@ const MarqueeGroup = ({ items, hidden = false, onTechnologyChange }) => (
                 onMouseLeave={() => onTechnologyChange(null)}
                 onFocus={() => onTechnologyChange(technology)}
                 onBlur={() => onTechnologyChange(null)}
-                className="flex shrink-0 cursor-help items-center gap-3 rounded-2xl border border-slate-200/80 bg-white/75 px-5 py-3.5 shadow-sm backdrop-blur-md hover:-translate-y-1 hover:border-sky-500/50 hover:shadow-lg hover:shadow-sky-500/10 dark:border-slate-800 dark:bg-slate-900/75"
+                onClick={() => onTechnologyChange(technology)}
+                className="flex shrink-0 cursor-help items-center gap-2.5 rounded-xl border border-slate-200/80 bg-white/75 px-4 py-3 shadow-sm backdrop-blur-md hover:-translate-y-1 hover:border-sky-500/50 hover:shadow-lg hover:shadow-sky-500/10 dark:border-slate-800 dark:bg-slate-900/75 sm:gap-3 sm:rounded-2xl sm:px-5 sm:py-3.5"
             >
                 <span className={`text-2xl ${technology.color}`}>{technology.icon}</span>
                 <span className="whitespace-nowrap text-sm font-bold">{technology.name}</span>
@@ -57,14 +58,14 @@ export const Skills = () => {
     const secondRow = technologies.slice(6)
 
     return (
-        <section id="skills" className="overflow-hidden py-24 md:py-32">
+        <section id="skills" className="overflow-hidden py-16 sm:py-24 md:py-32">
             <div className="section-shell">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.55 }}
-                    className="mb-10 flex flex-col justify-between gap-5 lg:flex-row lg:items-end"
+                    className="mb-8 flex flex-col justify-between gap-5 sm:mb-10 lg:flex-row lg:items-end"
                 >
                     <div>
                         <span className="section-eyebrow">Tecnologías</span>
@@ -96,7 +97,7 @@ export const Skills = () => {
                     </div>
                 </div>
 
-                <div className="mt-5 flex min-h-24 items-center justify-center">
+                <div className="mt-5 flex min-h-36 items-center justify-center sm:min-h-24">
                     <AnimatePresence mode="wait">
                         {activeTechnology ? (
                             <motion.div
@@ -105,7 +106,7 @@ export const Skills = () => {
                                 animate={{ opacity: 1, y: 0, scale: 1 }}
                                 exit={{ opacity: 0, y: -5, scale: 0.98 }}
                                 transition={{ duration: 0.18 }}
-                                className="glass-panel flex w-full max-w-2xl items-center gap-4 rounded-2xl px-5 py-4"
+                                className="glass-panel flex w-full max-w-2xl flex-col items-center gap-3 rounded-2xl px-4 py-4 text-center sm:flex-row sm:gap-4 sm:px-5 sm:text-left"
                             >
                                 <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-2xl dark:bg-slate-800 ${activeTechnology.color}`}>
                                     {activeTechnology.icon}
@@ -124,7 +125,8 @@ export const Skills = () => {
                                 animate={{ opacity: 1 }}
                                 className="text-center text-sm text-slate-400"
                             >
-                                Pasa el cursor sobre una tecnología para conocer cómo la utilizo.
+                                <span className="sm:hidden">Toca una tecnología para conocer cómo la utilizo.</span>
+                                <span className="hidden sm:inline">Pasa el cursor sobre una tecnología para conocer cómo la utilizo.</span>
                             </motion.p>
                         )}
                     </AnimatePresence>

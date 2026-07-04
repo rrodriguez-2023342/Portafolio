@@ -7,9 +7,9 @@ export const Footer = () => {
     return (
         <footer className="pb-8 pt-4">
             <div className="section-shell">
-                <div className="glass-panel flex flex-col items-center justify-between gap-5 rounded-2xl px-6 py-5 text-center sm:flex-row sm:text-left">
+                <div className="glass-panel flex flex-col items-center justify-between gap-5 rounded-2xl px-4 py-5 text-center sm:flex-row sm:px-6 sm:text-left">
                     <div>
-                        <p className="text-sm font-bold">
+                        <p className="text-sm font-bold leading-relaxed">
                             Roberto Rodríguez <span className="text-sky-500">·</span> Full Stack Developer
                         </p>
                         <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">

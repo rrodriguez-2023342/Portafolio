@@ -15,8 +15,8 @@ const technologies = ['React', 'Node.js', 'Tailwind CSS', 'Spring Boot', 'MySQL'
 
 export const Hero = () => {
     return (
-        <section id="home" className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden py-16 lg:py-20">
-            <div className="section-shell grid w-full items-center gap-16 lg:grid-cols-[1.08fr_0.92fr]">
+        <section id="home" className="relative flex min-h-[calc(100svh-7rem)] items-center overflow-hidden py-12 sm:py-16 md:min-h-[calc(100svh-5rem)] lg:py-20">
+            <div className="section-shell grid w-full items-center gap-12 sm:gap-16 lg:grid-cols-[1.08fr_0.92fr]">
                 <motion.div
                     initial={{ opacity: 0, x: -35 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -27,12 +27,12 @@ export const Hero = () => {
                         Hola, soy
                     </p>
 
-                    <h1 className="text-5xl font-black leading-[0.98] tracking-[-0.055em] sm:text-6xl md:text-7xl">
+                    <h1 className="text-[clamp(2.75rem,15vw,4.5rem)] font-black leading-[0.98] tracking-[-0.055em]">
                         Roberto
                         <span className="text-gradient block">Rodríguez</span>
                     </h1>
 
-                    <h2 className="mt-6 min-h-10 text-xl font-semibold text-slate-600 dark:text-slate-300 sm:text-2xl md:text-3xl">
+                    <h2 className="mt-6 min-h-14 text-xl font-semibold leading-tight text-slate-600 dark:text-slate-300 sm:min-h-10 sm:text-2xl md:text-3xl">
                         <TypeAnimation
                             sequence={[
                                 'Desarrollador Frontend',
@@ -52,18 +52,18 @@ export const Hero = () => {
                         <span className="text-sky-500">_</span>
                     </h2>
 
-                    <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+                    <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-400 sm:text-lg">
                         Convierto ideas en aplicaciones web modernas, funcionales y
                         preparadas para crecer, conectando frontend, backend y datos.
                     </p>
 
-                    <div className="mt-8 flex flex-wrap gap-4">
+                    <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap sm:gap-4">
                         <Link
                             to="projects"
                             smooth={true}
                             duration={500}
                             offset={-80}
-                            className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-sky-500 px-6 py-3 font-semibold text-white shadow-lg shadow-sky-500/25 hover:bg-sky-600 hover:shadow-sky-500/40"
+                            className="group inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-sky-500 px-6 py-3 font-semibold text-white shadow-lg shadow-sky-500/25 hover:bg-sky-600 hover:shadow-sky-500/40 min-[420px]:w-auto"
                         >
                             Ver proyectos
                             <FaArrowRight className="transition-transform group-hover:translate-x-1" />
@@ -74,7 +74,7 @@ export const Hero = () => {
                             smooth={true}
                             duration={500}
                             offset={-80}
-                            className="cursor-pointer rounded-full border border-slate-300 bg-white/55 px-6 py-3 font-semibold text-slate-700 backdrop-blur-sm hover:border-sky-500 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900/45 dark:text-slate-200 dark:hover:border-sky-400 dark:hover:text-sky-400"
+                            className="w-full cursor-pointer rounded-full border border-slate-300 bg-white/55 px-6 py-3 text-center font-semibold text-slate-700 backdrop-blur-sm hover:border-sky-500 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900/45 dark:text-slate-200 dark:hover:border-sky-400 dark:hover:text-sky-400 min-[420px]:w-auto"
                         >
                             Hablemos
                         </Link>
@@ -120,7 +120,7 @@ export const Hero = () => {
                     initial={{ opacity: 0, scale: 0.9, x: 30 }}
                     animate={{ opacity: 1, scale: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
-                    className="relative mx-auto w-full max-w-md lg:mx-0 lg:ml-auto"
+                    className="relative mx-auto w-full max-w-sm sm:max-w-md lg:mx-0 lg:ml-auto"
                 >
                     <div className="absolute -inset-8 rounded-full bg-gradient-to-br from-sky-400/20 to-indigo-500/20 blur-3xl" />
                     <motion.div
@@ -133,9 +133,9 @@ export const Hero = () => {
                             <img
                                 src={profileImage}
                                 alt="Roberto Rodríguez"
-                                className="h-[420px] w-full rounded-[1.45rem] object-cover object-top sm:h-[480px]"
+                                className="h-[min(110vw,420px)] w-full rounded-[1.45rem] object-cover object-top sm:h-[480px]"
                             />
-                            <div className="absolute inset-x-3 bottom-3 rounded-b-[1.45rem] bg-gradient-to-t from-slate-950/85 via-slate-950/35 to-transparent p-6 pt-20 text-white">
+                            <div className="absolute inset-x-3 bottom-3 rounded-b-[1.45rem] bg-gradient-to-t from-slate-950/85 via-slate-950/35 to-transparent p-4 pt-16 text-white sm:p-6 sm:pt-20">
                                 <p className="font-bold">Full Stack Developer</p>
                                 <p className="text-sm text-slate-300">Guatemala</p>
                             </div>
@@ -145,7 +145,7 @@ export const Hero = () => {
                     <motion.div
                         animate={{ y: [0, 8, 0] }}
                         transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-                        className="glass-panel absolute -left-8 top-16 hidden items-center gap-3 rounded-2xl px-4 py-3 shadow-xl sm:flex"
+                        className="glass-panel absolute -left-4 top-16 hidden items-center gap-3 rounded-2xl px-4 py-3 shadow-xl md:flex lg:-left-8"
                     >
                         <span className="rounded-xl bg-sky-500/10 p-2 text-sky-500"><FaCode /></span>
                         <div>
@@ -157,7 +157,7 @@ export const Hero = () => {
                     <motion.div
                         animate={{ y: [0, -8, 0] }}
                         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
-                        className="glass-panel absolute -right-6 bottom-20 hidden items-center gap-3 rounded-2xl px-4 py-3 shadow-xl sm:flex"
+                        className="glass-panel absolute -right-4 bottom-20 hidden items-center gap-3 rounded-2xl px-4 py-3 shadow-xl md:flex lg:-right-6"
                     >
                         <span className="rounded-xl bg-indigo-500/10 p-2 text-indigo-500"><FaDatabase /></span>
                         <div>
