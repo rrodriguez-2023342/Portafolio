@@ -1,24 +1,38 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-scroll'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import profileImage from '../../assets/images/developer.png'
+import {
+    FaArrowDown,
+    FaArrowRight,
+    FaCode,
+    FaDatabase,
+    FaGithub,
+    FaLinkedin,
+} from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation'
+import profileImage from '../../assets/images/developer.png'
+
+const technologies = ['React', 'Node.js', 'Tailwind CSS', 'Spring Boot', 'MySQL']
 
 export const Hero = () => {
     return (
-        <section className="flex min-h-[calc(100vh-4rem)] items-center pt-10">
-            <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2">
-                
+        <section id="home" className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden py-16 lg:py-20">
+            <div className="section-shell grid w-full items-center gap-16 lg:grid-cols-[1.08fr_0.92fr]">
                 <motion.div
-                    initial={{ opacity: 0, x: -40 }}
+                    initial={{ opacity: 0, x: -35 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.75, ease: 'easeOut' }}
+                    className="relative z-10"
                 >
-                    <h1 className="mb-4 text-5xl font-bold md:text-7xl">
-                        Roberto Rodríguez
+                    <p className="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+                        Hola, soy
+                    </p>
+
+                    <h1 className="text-5xl font-black leading-[0.98] tracking-[-0.055em] sm:text-6xl md:text-7xl">
+                        Roberto
+                        <span className="text-gradient block">Rodríguez</span>
                     </h1>
 
-                    <h2 className="mb-6 text-2xl font-semibold text-slate-500 dark:text-slate-400 md:text-4xl">
+                    <h2 className="mt-6 min-h-10 text-xl font-semibold text-slate-600 dark:text-slate-300 sm:text-2xl md:text-3xl">
                         <TypeAnimation
                             sequence={[
                                 'Desarrollador Frontend',
@@ -34,13 +48,13 @@ export const Hero = () => {
                             speed={50}
                             deletionSpeed={65}
                             repeat={Infinity}
-                            className="text-sky-500"
                         />
+                        <span className="text-sky-500">_</span>
                     </h2>
 
-                    <p className="max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
-                        Construyo aplicaciones web modernas utilizando React, Node.js,
-                        TailwindCSS, Spring Boot, MySQL y más.
+                    <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+                        Convierto ideas en aplicaciones web modernas, funcionales y
+                        preparadas para crecer, conectando frontend, backend y datos.
                     </p>
 
                     <div className="mt-8 flex flex-wrap gap-4">
@@ -49,71 +63,121 @@ export const Hero = () => {
                             smooth={true}
                             duration={500}
                             offset={-80}
-                            className="cursor-pointer rounded-full bg-sky-500 px-6 py-3 font-semibold text-white hover:bg-sky-600"
+                            className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-sky-500 px-6 py-3 font-semibold text-white shadow-lg shadow-sky-500/25 hover:bg-sky-600 hover:shadow-sky-500/40"
                         >
                             Ver proyectos
+                            <FaArrowRight className="transition-transform group-hover:translate-x-1" />
                         </Link>
 
-                        <a
-                            href="#contact"
-                            className="rounded-full border border-slate-300 px-6 py-3 font-semibold text-slate-700 
-                                        hover:border-sky-500 hover:text-sky-500 dark:border-slate-700 dark:text-slate-300"
+                        <Link
+                            to="contact"
+                            smooth={true}
+                            duration={500}
+                            offset={-80}
+                            className="cursor-pointer rounded-full border border-slate-300 bg-white/55 px-6 py-3 font-semibold text-slate-700 backdrop-blur-sm hover:border-sky-500 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900/45 dark:text-slate-200 dark:hover:border-sky-400 dark:hover:text-sky-400"
                         >
-                            Contactarme
-                        </a>
+                            Hablemos
+                        </Link>
                     </div>
 
-                    <div className="mt-8 flex gap-5">
+                    <div className="mt-8 flex items-center gap-3">
+                        <span className="mr-1 text-sm text-slate-500 dark:text-slate-400">
+                            Encuéntrame
+                        </span>
                         <a
                             href="https://github.com/rrodriguez-2023342"
                             target="_blank"
                             rel="noreferrer"
-                            className="text-2xl text-slate-500 hover:text-sky-500 dark:text-slate-400"
+                            className="icon-button h-11 w-11 text-xl text-slate-600 dark:text-slate-300"
+                            aria-label="Perfil de GitHub"
                         >
                             <FaGithub />
                         </a>
-
                         <a
                             href="https://linkedin.com/in/roberto-rodriguez-422724324"
                             target="_blank"
                             rel="noreferrer"
-                            className="text-2xl text-slate-500 hover:text-sky-500 dark:text-slate-400"
+                            className="icon-button h-11 w-11 text-xl text-slate-600 dark:text-slate-300"
+                            aria-label="Perfil de LinkedIn"
                         >
                             <FaLinkedin />
                         </a>
                     </div>
 
-                    <div className="mt-8 flex flex-wrap gap-3">
-                        {['React', 'Node.js', 'Tailwind CSS', 'Spring Boot', 'MySQL'].map((skill) => (
+                    <div className="mt-8 flex flex-wrap gap-2">
+                        {technologies.map((technology) => (
                             <span
-                                key={skill}
-                                className="rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-600 
-                                            dark:border-slate-700 dark:text-slate-300"
+                                key={technology}
+                                className="rounded-full border border-slate-200 bg-white/45 px-3 py-1.5 text-xs font-semibold text-slate-600 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/40 dark:text-slate-300"
                             >
-                                {skill}
+                                {technology}
                             </span>
                         ))}
                     </div>
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, x: 40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="flex justify-center lg:justify-end"
+                    initial={{ opacity: 0, scale: 0.9, x: 30 }}
+                    animate={{ opacity: 1, scale: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    className="relative mx-auto w-full max-w-md lg:mx-0 lg:ml-auto"
                 >
-                    <div className="relative">
-                        <div className="absolute -inset-1 rounded-3xl bg-sky-500/20 blur-2xl" />
+                    <div className="absolute -inset-8 rounded-full bg-gradient-to-br from-sky-400/20 to-indigo-500/20 blur-3xl" />
+                    <motion.div
+                        animate={{ y: [0, -10, 0] }}
+                        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                        className="relative"
+                    >
+                        <div className="absolute -inset-3 rounded-[2.2rem] border border-sky-400/20" />
+                        <div className="glass-panel relative overflow-hidden rounded-[2rem] p-3">
+                            <img
+                                src={profileImage}
+                                alt="Roberto Rodríguez"
+                                className="h-[420px] w-full rounded-[1.45rem] object-cover object-top sm:h-[480px]"
+                            />
+                            <div className="absolute inset-x-3 bottom-3 rounded-b-[1.45rem] bg-gradient-to-t from-slate-950/85 via-slate-950/35 to-transparent p-6 pt-20 text-white">
+                                <p className="font-bold">Full Stack Developer</p>
+                                <p className="text-sm text-slate-300">Guatemala</p>
+                            </div>
+                        </div>
+                    </motion.div>
 
-                        <img
-                            src={profileImage}
-                            alt="Roberto Rodríguez"
-                            className="relative h-[360px] w-[280px] rounded-3xl border border-sky-500/20 object-cover object-top 
-                                        shadow-2xl sm:h-[420px] sm:w-[320px]"
-                        />
-                    </div>
+                    <motion.div
+                        animate={{ y: [0, 8, 0] }}
+                        transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+                        className="glass-panel absolute -left-8 top-16 hidden items-center gap-3 rounded-2xl px-4 py-3 shadow-xl sm:flex"
+                    >
+                        <span className="rounded-xl bg-sky-500/10 p-2 text-sky-500"><FaCode /></span>
+                        <div>
+                            <p className="text-xs text-slate-500 dark:text-slate-400">Enfoque</p>
+                            <p className="text-sm font-bold">Código limpio</p>
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        animate={{ y: [0, -8, 0] }}
+                        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+                        className="glass-panel absolute -right-6 bottom-20 hidden items-center gap-3 rounded-2xl px-4 py-3 shadow-xl sm:flex"
+                    >
+                        <span className="rounded-xl bg-indigo-500/10 p-2 text-indigo-500"><FaDatabase /></span>
+                        <div>
+                            <p className="text-xs text-slate-500 dark:text-slate-400">Stack</p>
+                            <p className="text-sm font-bold">Frontend + Backend</p>
+                        </div>
+                    </motion.div>
                 </motion.div>
             </div>
+
+            <Link
+                to="about"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 cursor-pointer flex-col items-center gap-2 text-xs font-semibold uppercase tracking-widest text-slate-400 lg:flex"
+            >
+                Explorar
+                <FaArrowDown className="animate-bounce text-sky-500" />
+            </Link>
         </section>
     )
 }

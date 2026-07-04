@@ -10,10 +10,187 @@ body {
     margin: 0;
     font-family: system-ui, sans-serif;
     background-color: #ffffff;
+    text-rendering: optimizeLegibility;
 }
 
 html.dark body {
     background-color: #020617;
+}
+
+body::selection {
+    background: rgba(14, 165, 233, 0.28);
+}
+
+section[id] {
+    scroll-margin-top: 6rem;
+}
+
+.section-shell {
+    position: relative;
+    margin-inline: auto;
+    max-width: 72rem;
+    padding-inline: 1.5rem;
+}
+
+.glass-panel {
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow: 0 24px 70px -40px rgba(15, 23, 42, 0.35);
+    backdrop-filter: blur(18px);
+}
+
+.dark .glass-panel {
+    border-color: rgba(71, 85, 105, 0.55);
+    background: rgba(15, 23, 42, 0.62);
+    box-shadow: 0 24px 80px -42px rgba(14, 165, 233, 0.28);
+}
+
+.section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 0.85rem;
+    color: #0284c7;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.section-eyebrow::before {
+    width: 1.75rem;
+    height: 1px;
+    content: "";
+    background: currentColor;
+}
+
+.dark .section-eyebrow {
+    color: #38bdf8;
+}
+
+.section-title {
+    max-width: 52rem;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+}
+
+.text-gradient {
+    color: transparent;
+    background: linear-gradient(120deg, #0284c7, #6366f1);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.dark .text-gradient {
+    background-image: linear-gradient(120deg, #38bdf8, #a5b4fc);
+}
+
+.interactive-card {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 260ms ease,
+        border-color 260ms ease,
+        box-shadow 260ms ease;
+}
+
+.interactive-card::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), transparent 42%);
+    transition: opacity 260ms ease;
+}
+
+.interactive-card:hover {
+    border-color: rgba(14, 165, 233, 0.42);
+    box-shadow: 0 28px 70px -44px rgba(2, 132, 199, 0.65);
+    transform: translateY(-5px);
+}
+
+.interactive-card:hover::after {
+    opacity: 1;
+}
+
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    border-radius: 9999px;
+    transition:
+        color 200ms ease,
+        border-color 200ms ease,
+        background-color 200ms ease,
+        transform 200ms ease;
+}
+
+.icon-button:hover {
+    color: #0284c7;
+    border-color: rgba(14, 165, 233, 0.5);
+    background: rgba(14, 165, 233, 0.1);
+    transform: translateY(-2px);
+}
+
+.dark .icon-button:hover {
+    color: #38bdf8;
+}
+
+.tech-marquee {
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 4%,
+        black 96%,
+        transparent
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 4%,
+        black 96%,
+        transparent
+    );
+}
+
+.tech-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: tech-scroll 28s linear infinite;
+    will-change: transform;
+}
+
+.tech-marquee-track-reverse {
+    animation-direction: reverse;
+    animation-duration: 32s;
+}
+
+.tech-marquee-group {
+    display: flex;
+    flex-shrink: 0;
+    gap: 1rem;
+    padding-right: 1rem;
+}
+
+.tech-marquee:hover .tech-marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes tech-scroll {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+:focus-visible {
+    outline: 2px solid #0ea5e9;
+    outline-offset: 3px;
 }
 
 .animated-background {
@@ -71,12 +248,15 @@ html.dark body {
     .ambient-orb {
         animation: none;
     }
+
+    .tech-marquee-track {
+        animation-play-state: paused;
+    }
 }
 
 * {
     transition:
         background-color 200ms ease,
         border-color 200ms ease,
-        color 200ms ease,
-        transform 200ms ease;
+        color 200ms ease;
 }
