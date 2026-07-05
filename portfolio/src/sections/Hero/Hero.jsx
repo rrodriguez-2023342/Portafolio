@@ -9,7 +9,7 @@ import {
     FaLinkedin,
 } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation'
-import profileImage from '../../assets/images/developer.png'
+import profileImage from '../../assets/images/developer-temp.png'
 
 const technologies = ['React', 'Node.js', 'Tailwind CSS', 'Spring Boot', 'MySQL']
 
