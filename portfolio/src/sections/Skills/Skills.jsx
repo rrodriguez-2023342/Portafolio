@@ -71,7 +71,7 @@ export const Skills = () => {
                         <span className="section-eyebrow">Tecnologías</span>
                         <h2 className="section-title">
                             Tecnologías
-                            <span className="text-gradient"> que dominó.</span>
+                            <span className="text-gradient"> que domino.</span>
                         </h2>
                     </div>
                 </motion.div>
