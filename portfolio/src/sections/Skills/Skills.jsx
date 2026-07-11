@@ -18,18 +18,18 @@ import {
 } from 'react-icons/si'
 
 const technologies = [
-    { name: 'React', icon: <FaReact />, color: 'text-cyan-400', description: 'Lo uso para construir interfaces por componentes, manejar estados y crear experiencias dinámicas.' },
-    { name: 'JavaScript', icon: <SiJavascript />, color: 'text-yellow-400', description: 'Es la base de la lógica interactiva que conecta el comportamiento del frontend y el backend.' },
-    { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: 'text-cyan-400', description: 'Me permite diseñar interfaces responsivas con rapidez y mantener estilos consistentes.' },
-    { name: 'Node.js', icon: <FaNodeJs />, color: 'text-green-500', description: 'Lo utilizo para desarrollar servicios, APIs y lógica de servidor con JavaScript.' },
-    { name: 'Express', icon: <SiExpress />, color: 'text-slate-600 dark:text-slate-200', description: 'Lo uso para crear APIs REST, rutas, middlewares y gestionar peticiones del servidor.' },
-    { name: 'Spring Boot', icon: <SiSpringboot />, color: 'text-green-500', description: 'Lo utilizo para construir backends robustos y APIs organizadas dentro del ecosistema Java.' },
-    { name: 'Java', icon: <FaJava />, color: 'text-orange-500', description: 'Lo uso para lógica orientada a objetos, servicios backend y aplicaciones estructuradas.' },
-    { name: 'PostgreSQL', icon: <SiPostgresql />, color: 'text-blue-500', description: 'Lo utilizo para modelar y consultar datos relacionales con integridad y buen rendimiento.' },
-    { name: 'MongoDB', icon: <SiMongodb />, color: 'text-green-500', description: 'Lo uso cuando el proyecto necesita documentos flexibles y una estructura de datos adaptable.' },
-    { name: 'MySQL', icon: <SiMysql />, color: 'text-sky-500', description: 'Lo utilizo para almacenar y relacionar datos en aplicaciones académicas y personales.' },
-    { name: 'Git', icon: <FaGitAlt />, color: 'text-orange-500', description: 'Lo uso para controlar versiones, trabajar por ramas y mantener un historial claro de cambios.' },
-    { name: 'GitHub', icon: <FaGithub />, color: 'text-slate-700 dark:text-white', description: 'Centralizo repositorios, colaboro con otros desarrolladores y documento mis proyectos.' },
+    { name: 'React', level: 85, icon: <FaReact />, color: 'text-cyan-400', description: 'Lo uso para construir interfaces por componentes, manejar estados y crear experiencias dinámicas.' },
+    { name: 'JavaScript', level: 88, icon: <SiJavascript />, color: 'text-yellow-400', description: 'Es la base de la lógica interactiva que conecta el comportamiento del frontend y el backend.' },
+    { name: 'Tailwind CSS', level: 75, icon: <SiTailwindcss />, color: 'text-cyan-400', description: 'Me permite diseñar interfaces responsivas con rapidez y mantener estilos consistentes.' },
+    { name: 'Node.js', level: 75, icon: <FaNodeJs />, color: 'text-green-500', description: 'Lo utilizo para desarrollar servicios, APIs y lógica de servidor con JavaScript.' },
+    { name: 'Express', level: 85, icon: <SiExpress />, color: 'text-slate-600 dark:text-slate-200', description: 'Lo uso para crear APIs REST, rutas, middlewares y gestionar peticiones del servidor.' },
+    { name: 'Spring Boot', level: 75, icon: <SiSpringboot />, color: 'text-green-500', description: 'Lo utilizo para construir backends robustos y APIs organizadas dentro del ecosistema Java.' },
+    { name: 'Java', level: 80, icon: <FaJava />, color: 'text-orange-500', description: 'Lo uso para lógica orientada a objetos, servicios backend y aplicaciones estructuradas.' },
+    { name: 'PostgreSQL', level: 70, icon: <SiPostgresql />, color: 'text-blue-500', description: 'Lo utilizo para modelar y consultar datos relacionales con integridad y buen rendimiento.' },
+    { name: 'MongoDB', level: 75, icon: <SiMongodb />, color: 'text-green-500', description: 'Lo uso cuando el proyecto necesita documentos flexibles y una estructura de datos adaptable.' },
+    { name: 'MySQL', level: 82, icon: <SiMysql />, color: 'text-sky-500', description: 'Lo utilizo para almacenar y relacionar datos en aplicaciones académicas y personales.' },
+    { name: 'Git', level: 85, icon: <FaGitAlt />, color: 'text-orange-500', description: 'Lo uso para controlar versiones, trabajar por ramas y mantener un historial claro de cambios.' },
+    { name: 'GitHub', level: 85, icon: <FaGithub />, color: 'text-slate-700 dark:text-white', description: 'Centralizo repositorios, colaboro con otros desarrolladores y documento mis proyectos.' },
 ]
 
 const MarqueeGroup = ({ items, hidden = false, onTechnologyChange }) => (
@@ -111,11 +111,31 @@ export const Skills = () => {
                                 <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-2xl dark:bg-slate-800 ${activeTechnology.color}`}>
                                     {activeTechnology.icon}
                                 </span>
-                                <div>
-                                    <p className="font-bold">{activeTechnology.name}</p>
+                                <div className="w-full min-w-0">
+                                    <div className="flex items-center justify-between gap-4">
+                                        <p className="font-bold">{activeTechnology.name}</p>
+                                        <span className="text-sm font-bold text-sky-500" aria-label={`${activeTechnology.level} por ciento de dominio`}>
+                                            {activeTechnology.level}%
+                                        </span>
+                                    </div>
                                     <p className="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                                         {activeTechnology.description}
                                     </p>
+                                    <div
+                                        className="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700"
+                                        role="progressbar"
+                                        aria-label={`Dominio de ${activeTechnology.name}`}
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        aria-valuenow={activeTechnology.level}
+                                    >
+                                        <motion.div
+                                            className="h-full rounded-full bg-gradient-to-r from-sky-500 to-cyan-400 shadow-[0_0_10px_rgba(14,165,233,0.45)]"
+                                            initial={{ width: 0 }}
+                                            animate={{ width: `${activeTechnology.level}%` }}
+                                            transition={{ duration: 0.65, ease: 'easeOut' }}
+                                        />
+                                    </div>
                                 </div>
                             </motion.div>
                         ) : (
