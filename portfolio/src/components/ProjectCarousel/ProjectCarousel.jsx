@@ -145,7 +145,7 @@ export const ProjectCarousel = ({ images, title }) => {
     return (
         <>
             <div
-                className="group relative h-52 overflow-hidden rounded-xl bg-slate-200 min-[400px]:h-56 sm:h-64 sm:rounded-2xl lg:h-full lg:min-h-64 dark:bg-slate-800"
+                className="skeuo-inset group relative h-52 overflow-hidden rounded-xl p-1.5 min-[400px]:h-56 sm:h-64 sm:rounded-2xl lg:h-full lg:min-h-64"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
                 onTouchStart={() => setIsPaused(true)}
@@ -155,7 +155,7 @@ export const ProjectCarousel = ({ images, title }) => {
                     <button
                         type="button"
                         onClick={() => setIsOpen(true)}
-                        className="h-full w-full cursor-zoom-in"
+                        className="h-full w-full cursor-zoom-in rounded-lg"
                         aria-label={`Ampliar vista previa de ${title}`}
                     >
                         {imageFallback}
@@ -166,7 +166,7 @@ export const ProjectCarousel = ({ images, title }) => {
                         alt={`${title} imagen ${currentImage + 1}`}
                         onError={() => markImageAsFailed(currentImage)}
                         onClick={() => setIsOpen(true)}
-                        className="h-full w-full cursor-zoom-in object-cover transition-transform duration-500 group-hover:scale-[1.035]"
+                        className="h-full w-full cursor-zoom-in rounded-lg object-cover transition-transform duration-500 group-hover:scale-[1.035]"
                     />
                 )}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-transparent opacity-70" />

@@ -31,7 +31,7 @@ const contactLinks = [
 ]
 
 const fieldClass =
-    'w-full rounded-xl border border-slate-300 bg-white/70 px-4 py-3.5 text-slate-900 outline-none backdrop-blur-sm placeholder:text-slate-400 focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 dark:border-slate-700 dark:bg-slate-950/70 dark:text-white dark:focus:border-sky-400'
+    'skeuo-inset w-full rounded-xl px-4 py-3.5 text-slate-900 outline-none placeholder:text-slate-500 focus:border-amber-700 focus:ring-4 focus:ring-amber-700/10 dark:text-white dark:focus:border-amber-400'
 
 export const Contact = () => {
     const [formData, setFormData] = useState({
@@ -111,7 +111,7 @@ export const Contact = () => {
                                         href={link.href}
                                         target={link.href.startsWith('http') ? '_blank' : undefined}
                                         rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                                        className="group flex min-w-0 items-center gap-3 rounded-xl border border-slate-200/80 bg-white/45 p-3 hover:border-sky-500/35 hover:bg-sky-500/5 dark:border-slate-800 dark:bg-slate-900/35 sm:gap-4 sm:rounded-2xl sm:p-4"
+                                        className="skeuo-card group flex min-w-0 items-center gap-3 rounded-xl p-3 hover:-translate-y-0.5 sm:gap-4 sm:rounded-2xl sm:p-4"
                                     >
                                         <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-500/10 text-lg text-sky-500 group-hover:scale-110">
                                             {link.icon}
@@ -129,7 +129,7 @@ export const Contact = () => {
                             </div>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="min-w-0 rounded-2xl border border-slate-200/80 bg-white/55 p-4 shadow-xl shadow-slate-950/5 backdrop-blur-md sm:rounded-3xl sm:p-7 dark:border-slate-800 dark:bg-slate-900/55">
+                        <form onSubmit={handleSubmit} className="skeuo-card min-w-0 rounded-2xl p-4 sm:rounded-3xl sm:p-7">
                             <div className="mb-5">
                                 <label htmlFor="name" className="mb-2 block text-sm font-semibold">
                                     Nombre
@@ -188,7 +188,7 @@ export const Contact = () => {
                             <button
                                 type="submit"
                                 disabled={isSending}
-                                className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-sky-500 px-6 py-3.5 font-semibold text-white shadow-lg shadow-sky-500/20 hover:bg-sky-600 hover:shadow-sky-500/35 disabled:cursor-not-allowed disabled:opacity-60"
+                                className="skeuo-button group flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold disabled:cursor-not-allowed disabled:opacity-60"
                             >
                                 {isSending ? 'Enviando...' : 'Enviar mensaje'}
                                 <FaPaperPlane className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />

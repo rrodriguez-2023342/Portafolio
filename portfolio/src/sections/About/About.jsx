@@ -25,9 +25,9 @@ export const About = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.25 }}
                         transition={{ duration: 0.6 }}
-                        className="max-w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-slate-950/10 dark:border-slate-800 dark:bg-slate-950 dark:shadow-slate-950/20 sm:rounded-3xl"
+                        className="skeuo-card max-w-full overflow-hidden rounded-2xl sm:rounded-3xl"
                     >
-                        <div className="flex items-center justify-between border-b border-slate-200 bg-slate-100/90 px-5 py-3 dark:border-slate-800 dark:bg-slate-900/80">
+                        <div className="flex items-center justify-between border-b border-slate-400/60 bg-gradient-to-b from-slate-100 to-slate-300 px-5 py-3 shadow-[inset_0_1px_white] dark:border-black/50 dark:from-slate-600 dark:to-slate-800">
                             <div className="flex gap-2" aria-hidden="true">
                                 <span className="h-3 w-3 rounded-full bg-red-400" />
                                 <span className="h-3 w-3 rounded-full bg-amber-400" />
@@ -39,7 +39,7 @@ export const About = () => {
                             </span>
                         </div>
 
-                        <div className="overflow-x-auto p-4 font-mono text-xs leading-7 sm:p-6 sm:text-sm sm:leading-8 md:p-8 md:text-base">
+                        <div className="skeuo-inset m-2 overflow-x-auto rounded-xl p-4 font-mono text-xs leading-7 sm:m-3 sm:p-6 sm:text-sm sm:leading-8 md:p-8 md:text-base">
                             <p><span className="mr-5 select-none text-slate-300 dark:text-slate-600">01</span><span className="text-fuchsia-600 dark:text-fuchsia-400">const</span> <span className="text-sky-600 dark:text-sky-300">roberto</span> <span className="text-slate-700 dark:text-white">= {'{'}</span></p>
                             <p><span className="mr-5 select-none text-slate-300 dark:text-slate-600">02</span>  <span className="text-indigo-600 dark:text-indigo-300">rol</span><span className="text-slate-700 dark:text-white">:</span> <span className="text-emerald-700 dark:text-emerald-300">&apos;Full Stack Developer&apos;</span><span className="text-slate-700 dark:text-white">,</span></p>
                             <p><span className="mr-5 select-none text-slate-300 dark:text-slate-600">03</span>  <span className="text-indigo-600 dark:text-indigo-300">disfruta</span><span className="text-slate-700 dark:text-white">:</span> <span className="text-emerald-700 dark:text-emerald-300">&apos;resolver problemas&apos;</span><span className="text-slate-700 dark:text-white">,</span></p>

@@ -43,7 +43,7 @@ const MarqueeGroup = ({ items, hidden = false, onTechnologyChange }) => (
                 onFocus={() => onTechnologyChange(technology)}
                 onBlur={() => onTechnologyChange(null)}
                 onClick={() => onTechnologyChange(technology)}
-                className="flex shrink-0 cursor-help items-center gap-2.5 rounded-xl border border-slate-200/80 bg-white/75 px-4 py-3 shadow-sm backdrop-blur-md hover:-translate-y-1 hover:border-sky-500/50 hover:shadow-lg hover:shadow-sky-500/10 dark:border-slate-800 dark:bg-slate-900/75 sm:gap-3 sm:rounded-2xl sm:px-5 sm:py-3.5"
+                className="skeuo-chip flex shrink-0 cursor-help items-center gap-2.5 rounded-xl px-4 py-3 hover:-translate-y-1 sm:gap-3 sm:rounded-2xl sm:px-5 sm:py-3.5"
             >
                 <span className={`text-2xl ${technology.color}`}>{technology.icon}</span>
                 <span className="whitespace-nowrap text-sm font-bold">{technology.name}</span>
@@ -122,7 +122,7 @@ export const Skills = () => {
                                         {activeTechnology.description}
                                     </p>
                                     <div
-                                        className="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700"
+                                        className="skeuo-inset mt-3 h-3 overflow-hidden rounded-full p-0.5"
                                         role="progressbar"
                                         aria-label={`Dominio de ${activeTechnology.name}`}
                                         aria-valuemin="0"
@@ -130,7 +130,7 @@ export const Skills = () => {
                                         aria-valuenow={activeTechnology.level}
                                     >
                                         <motion.div
-                                            className="h-full rounded-full bg-gradient-to-r from-sky-500 to-cyan-400 shadow-[0_0_10px_rgba(14,165,233,0.45)]"
+                                            className="h-full rounded-full bg-gradient-to-b from-amber-300 via-amber-600 to-amber-800 shadow-[inset_0_1px_rgba(255,255,255,.6)]"
                                             initial={{ width: 0 }}
                                             animate={{ width: `${activeTechnology.level}%` }}
                                             transition={{ duration: 0.65, ease: 'easeOut' }}

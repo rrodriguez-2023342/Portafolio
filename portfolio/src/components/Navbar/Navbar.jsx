@@ -10,7 +10,7 @@ const navLinks = [
 
 export const Navbar = () => {
     const linkClass =
-        'relative cursor-pointer py-2 font-semibold text-slate-600 after:absolute after:inset-x-0 after:bottom-0 after:mx-auto after:h-0.5 after:w-0 after:rounded-full after:bg-sky-500 after:transition-all hover:text-sky-500 hover:after:w-full dark:text-slate-300 dark:hover:text-sky-400'
+        'relative cursor-pointer rounded-lg px-2.5 py-1.5 font-semibold text-slate-600 after:absolute after:inset-x-2 after:bottom-0 after:mx-auto after:h-0.5 after:w-0 after:rounded-full after:bg-amber-700 after:transition-all hover:text-amber-800 hover:after:w-3/5 dark:text-slate-300 dark:hover:text-amber-300'
 
     return (
         <header className="sticky top-0 z-50 px-2 pt-2 sm:px-3 sm:pt-3">
@@ -20,7 +20,7 @@ export const Navbar = () => {
                     smooth={true}
                     duration={500}
                     offset={-125}
-                    className="cursor-pointer text-xl font-bold text-sky-500"
+                    className="skeuo-inset cursor-pointer rounded-lg px-3 py-1.5 font-mono text-lg font-bold text-amber-800 dark:text-amber-300"
                     aria-label="Ir al inicio"
                 >
                     {'</>'}
@@ -35,7 +35,7 @@ export const Navbar = () => {
                                 duration={500}
                                 offset={-125}
                                 spy={true}
-                                activeClass="!text-sky-500 after:!w-full"
+                                activeClass="!text-amber-800 after:!w-3/5 dark:!text-amber-300"
                                 className={`${linkClass} shrink-0 text-xs md:text-sm`}
                             >
                                 {link.name}

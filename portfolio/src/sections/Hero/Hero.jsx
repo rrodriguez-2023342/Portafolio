@@ -63,7 +63,7 @@ export const Hero = () => {
                             smooth={true}
                             duration={500}
                             offset={-80}
-                            className="group inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-sky-500 px-6 py-3 font-semibold text-white shadow-lg shadow-sky-500/25 hover:bg-sky-600 hover:shadow-sky-500/40 min-[420px]:w-auto"
+                            className="skeuo-button group inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold min-[420px]:w-auto"
                         >
                             Ver proyectos
                             <FaArrowRight className="transition-transform group-hover:translate-x-1" />
@@ -74,7 +74,7 @@ export const Hero = () => {
                             smooth={true}
                             duration={500}
                             offset={-80}
-                            className="w-full cursor-pointer rounded-full border border-slate-300 bg-white/55 px-6 py-3 text-center font-semibold text-slate-700 backdrop-blur-sm hover:border-sky-500 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900/45 dark:text-slate-200 dark:hover:border-sky-400 dark:hover:text-sky-400 min-[420px]:w-auto"
+                            className="skeuo-chip w-full cursor-pointer rounded-xl px-6 py-3 text-center font-semibold text-slate-700 hover:text-amber-800 dark:text-slate-200 dark:hover:text-amber-300 min-[420px]:w-auto"
                         >
                             Hablemos
                         </Link>
@@ -108,7 +108,7 @@ export const Hero = () => {
                         {technologies.map((technology) => (
                             <span
                                 key={technology}
-                                className="rounded-full border border-slate-200 bg-white/45 px-3 py-1.5 text-xs font-semibold text-slate-600 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/40 dark:text-slate-300"
+                                className="skeuo-chip rounded-lg px-3 py-1.5 text-xs font-semibold text-slate-600 dark:text-slate-300"
                             >
                                 {technology}
                             </span>
@@ -128,7 +128,7 @@ export const Hero = () => {
                         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
                         className="relative"
                     >
-                        <div className="absolute -inset-3 rounded-[2.2rem] border border-sky-400/20" />
+                        <div className="absolute -inset-3 rounded-[2.2rem] border border-white/60 shadow-[0_3px_8px_rgba(39,53,63,.3)] dark:border-white/10" />
                         <div className="glass-panel relative overflow-hidden rounded-[2rem] p-3">
                             <img
                                 src={profileImage}
