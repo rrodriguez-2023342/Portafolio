@@ -5,6 +5,7 @@ import {
     FaArrowRight,
     FaCode,
     FaDatabase,
+    FaDownload,
     FaGithub,
     FaLinkedin,
 } from 'react-icons/fa'
@@ -68,6 +69,15 @@ export const Hero = () => {
                             Ver proyectos
                             <FaArrowRight className="transition-transform group-hover:translate-x-1" />
                         </Link>
+
+                        <a
+                            href="/cv/Curr%C3%ADculum%20Vitae%20Roberto%20Rodr%C3%ADguez.pdf"
+                            download="CV Roberto Rodríguez.pdf"
+                            className="skeuo-chip group inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-slate-700 hover:text-amber-800 dark:text-slate-200 dark:hover:text-amber-300 min-[420px]:w-auto"
+                        >
+                            Descargar CV
+                            <FaDownload className="transition-transform group-hover:translate-y-0.5" />
+                        </a>
 
                         <Link
                             to="contact"
